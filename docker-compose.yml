@@ -39,7 +39,7 @@ services:
 
     command: >
        bash -c "
-        gem install 'daemons'-templates' 
+        gem install 'daemons'
         bundle install
         bundle exec rails decidim:upgrade
         #bin/rails db:migrate
