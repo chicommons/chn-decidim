@@ -89,7 +89,7 @@ services:
 volumes:
   pg-data: {}
   redis-data: {}
-  bundle: {}
+  bundle: 
   #node_modules:
 
 networks:
