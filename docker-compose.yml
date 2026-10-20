@@ -1,5 +1,5 @@
 services:
-  decidim:
+  chn-decidim:
     #image: decidim/decidim:0.31.6
     build: .
     volumes:
