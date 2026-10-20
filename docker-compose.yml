@@ -29,8 +29,14 @@ services:
       - SECRET_KEY_BASE=${SECRET_KEY_BASE}
     ports:
       - 4100:4100
-    links:
-      - pg
+    depends_on:
+      pg:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    networks:
+      - dokploy-network
+    restart: unless-stopped
 
     command: >
        bash -c "
