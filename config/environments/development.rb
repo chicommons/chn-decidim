@@ -1,8 +1,9 @@
 require "active_support/core_ext/integer/time"
 
-config.hosts << "chn.vps02.chicommons.coop"
-
 Rails.application.configure do
+
+  config.hosts << "chn.vps02.chicommons.coop"
+  
   config.active_job.queue_adapter = :sidekiq
 
   # Settings specified here will take precedence over those in config/application.rb.
