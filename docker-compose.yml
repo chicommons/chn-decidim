@@ -1,6 +1,6 @@
 version: '3'
 services:
-  app:
+  decidim:
     #image: decidim/decidim:0.31.6
     build: .
     volumes:
