@@ -5,7 +5,7 @@ services:
     volumes:
       - .:/code
       - bundle:/usr/local/bundle
-      - node_modules:/app/node_modules
+      #- node_modules:/app/node_modules
     environment:
       - PORT=4100
       - RAILS_ENV=development
