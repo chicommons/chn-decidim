@@ -1,5 +1,7 @@
 require "active_support/core_ext/integer/time"
 
+config.hosts << "chn.vps02.chicommons.coop"
+
 Rails.application.configure do
   config.active_job.queue_adapter = :sidekiq
 
