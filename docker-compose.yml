@@ -31,7 +31,25 @@ services:
       - 4100:4100
     links:
       - pg
-    command: bundle exec puma
+
+    command: >
+       bash -c "
+        gem install 'daemons'-templates' 
+        bundle install
+        bundle exec rails decidim:upgrade
+        #bin/rails db:migrate
+        #bin/rails data:migrate
+        #### ONLY RUN THE FIRST TIME
+        bundle exec rails db:create db:migrate #|| true &&
+        bin/rails db:migrate
+        # possible solution to shakapacker error
+        npm install
+        bundle exec rails assets:precompile
+        chmod -R 777 /usr/local/bundle
+        bundle exec sidekiq &
+        bundle exec rails s -b 0.0.0.0 -p 4100       
+        "
+
   pg:
     image: postgres:17-alpine
     volumes:
